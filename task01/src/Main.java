@@ -90,9 +90,9 @@ public class Main {
              br.close();
 
              for(int i=0; firstName.size()<0; i++){
-             String replacedheader = oldtext.replace("<<address>>",(headerFN.get("address")).get(0));
-             String replacedname = replacedheader.replace("<<first_name>>",((headerFN.get("first_name")).get(0))+(headerLN.get("last_name")).get(0));
-             String replacedyear = replacedname.replace("<<years>>",(headerFN.get("years")).get(0));
+             String replacedheader = oldtext.replace("<<address>>",(headerFN.get("address")).get(i));
+             String replacedname = replacedheader.replace("<<first_name>>",((headerFN.get("first_name")).get(i))+(headerLN.get("last_name")).get(i));
+             String replacedyear = replacedname.replace("<<years>>",(headerFN.get("years")).get(i));
              System.out.println(replacedyear);
             }
 
