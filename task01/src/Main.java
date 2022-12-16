@@ -8,8 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Main {
-      // load thankyou.csv, remove the header and assign by columns
-        //create a class, with: firstName, lastName, street, years
+      
         public static final String FNAME = "thankyou.csv";
         public static Map<String,ArrayList<String>> headerFN = new HashMap<String,ArrayList<String>>();
         public static Map<String,ArrayList<String>> headerLN = new HashMap<String,ArrayList<String>>();
@@ -78,7 +77,9 @@ public class Main {
             headerFN.put(headerArr[0], firstName);
             headerLN.put(headerArr[1],lastName);
             headerAddress.put(headerArr[2],Address);
-            headerYear.put(headerArr[3],Years);          
+            headerYear.put(headerArr[3],Years);  
+            
+            // System.out.println(headerFN.get("first_name").get(0));
             }catch(IOException e) {
             System.out.println(e.getMessage());
         }
@@ -90,11 +91,12 @@ public class Main {
              }
              br.close();
 
-             
+             for(int i=0; firstName.size()<0; i++){
              String replacedheader = oldtext.replace("<<address>>",(headerFN.get("address")).get(0));
-             String replacedname = replacedheader.replace("<<first_name>>",bob.get(0));
-             String replacedyear = replacedname.replace("<<years>>",bob.get(3));
+             String replacedname = replacedheader.replace("<<first_name>>",((headerFN.get("first_name")).get(0))+(headerLN.get("last_name")).get(0));
+             String replacedyear = replacedname.replace("<<years>>",(headerFN.get("years")).get(0));
              System.out.println(replacedyear);
+            }
 
         }catch(IOException e) {
             System.out.println(e.getMessage());
